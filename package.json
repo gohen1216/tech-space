@@ -24,8 +24,12 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
     "mysql2": "^2.3.0",
+    "nodemon": "^2.0.13",
     "packages": "0.0.8",
+    "run": "^1.4.0",
+    "seed": "^0.4.4",
     "sequelize": "^6.6.5"
   }
 }

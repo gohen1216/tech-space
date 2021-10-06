@@ -12,7 +12,9 @@ router.get('/', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
+
     const articles = articleData.map((article) => article.get({ plain: true }));
+
     res.render('dashboard', {
       articles,
       logged_in: req.session.logged_in,
@@ -37,7 +39,9 @@ router.get('/updateArticle/:id', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
+
     const article = articleData.get({ plain: true });
+
     res.render('updateArticle', {
       article,
       logged_in: req.session.logged_in,
@@ -47,4 +51,5 @@ router.get('/updateArticle/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-module.exports = router
+
+module.exports = router;
