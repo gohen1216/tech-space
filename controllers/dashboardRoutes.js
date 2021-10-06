@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Article, User} = require('../models');
 const withAuth = require('../utils/auth');
-
 router.get('/', withAuth, async (req, res) => {
   try {
     const articleData = await Article.findAll({
@@ -25,7 +24,6 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 router.get('/newArticle', withAuth, async (req, res) => {
   if (req.session.logged_in) {
     res.render('newArticle');
@@ -33,7 +31,6 @@ router.get('/newArticle', withAuth, async (req, res) => {
   res.redirect('/signin');
   }
 });
-
 router.get('/updateArticle/:id', withAuth, async (req, res) => {  
   try {
     const articleData = await Article.findOne({
