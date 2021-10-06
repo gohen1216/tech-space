@@ -15,7 +15,9 @@ router.get('/', async (req, res) => {
         },
       ],
     });
+
     const articles = articleData.map((article) => article.get({ plain: true }));
+
     res.render('homepage', { 
       articles, 
       logged_in: req.session.logged_in 
@@ -57,7 +59,9 @@ router.get('/articles/:id', async (req, res) => {
         },
       ],
     });
+
     const articleSingle = articleData.get({ plain: true });
+
     res.render('viewArticle', { 
       articleSingle, 
       logged_in: req.session.logged_in 
@@ -76,7 +80,9 @@ router.get('/updateComment/:id', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
+
     const comment = commentData.get({ plain: true });
+
     res.render('updateComment', {
       comment,
       logged_in: req.session.logged_in,
