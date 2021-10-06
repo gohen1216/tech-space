@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/luvkil/tech-space#readme",
   "dependencies": {
-    "packages": "0.0.8"
+    "dotenv": "^10.0.0",
+    "packages": "0.0.8",
+    "sequelize": "^6.6.5"
   }
 }

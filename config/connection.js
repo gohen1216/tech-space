@@ -19,4 +19,3 @@ if (process.env.JAWSDB_URL) {
 }
 
 module.exports = sequelize;
-git remote add origin https://github.com/luvkil/tech-space.git
