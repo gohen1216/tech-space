@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Article, Comment, User} = require('../models');
 const withAuth = require('../utils/auth');
-
 router.get('/', async (req, res) => {
   try {
     const articleData = await Article.findAll({
@@ -28,7 +27,6 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 router.get('/signin', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -36,7 +34,6 @@ router.get('/signin', (req, res) => {
   }
   res.render('signin');
 });
-
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -44,7 +41,6 @@ router.get('/signup', (req, res) => {
   }
   res.render('signup');
 });
-
 router.get('/articles/:id', async (req, res) => {
   try {
     const articleData = await Article.findByPk(req.params.id, {
@@ -75,7 +71,6 @@ router.get('/articles/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 // ORGANIZATIONAL NOTE: Included this one withAuth route here to avoid adding commentRoutes.js file.
 router.get('/updateComment/:id', withAuth, async (req, res) => {  
   try {
@@ -97,5 +92,4 @@ router.get('/updateComment/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 module.exports = router;

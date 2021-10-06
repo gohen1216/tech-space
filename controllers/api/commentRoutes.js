@@ -32,7 +32,6 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 router.get('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.findOne({
@@ -51,7 +50,6 @@ router.get('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
@@ -66,7 +64,6 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.update(
@@ -78,19 +75,16 @@ router.put('/:id', withAuth, async (req, res) => {
         id: req.params.id,
       },
     });
-
     if (!commentData) {
       res.status(404).json({ message: 'No comment found with this id.' });
       return;
     }
-
     res.status(200).json(commentData);
   } catch (err) {
     console.error(err);
     res.status(400).json(err);
   }
 });
-
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({
@@ -99,12 +93,10 @@ router.delete('/:id', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-
     if (!commentData) {
       res.status(404).json({ message: 'No comment found with this id!' });
       return;
     }
-
     res.status(200).json(commentData);
   } catch (err) {
     console.log(err);

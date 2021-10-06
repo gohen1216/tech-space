@@ -16,7 +16,6 @@ router.post('/signup', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 router.post('/signin', async (req, res) => {
   try {
     const userData = await User.findOne({ 
@@ -24,7 +23,6 @@ router.post('/signin', async (req, res) => {
         username: req.body.username, 
       } 
     });
-
     if (!userData) {
       res
         .status(400)
@@ -53,7 +51,6 @@ router.post('/signin', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 router.post('/signout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
