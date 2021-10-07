@@ -35,6 +35,6 @@ Problems dealt with were:
 [live link](https://technology-blog-space.herokuapp.com/)
 
 ### COntributers
-[aldaine knight](https://github/luvkil)
+[aldaine knight](https://github/luvkil) <br>
 [sanusi cole](https://github.com/gohen1216)
 
