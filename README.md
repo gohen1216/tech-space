@@ -1,4 +1,4 @@
-# tech-space 
+# Tech-Blog
 
 The idea behind this application is a space where tech ideas are sheared by a differing groups of people.
 
