@@ -26,11 +26,15 @@ Sequelize as the ORM, and the express-session npm package for authentication.
 ### Major RoadBlocks
 
 Problems dealt with were:
-- very short window of time to get a completed project running
-- merging conflicts and resolution
+- very short window of time to get project completed and running
+- merging conflicts
 - connection to mysql database
-- generally get resource together
+- generally getting resource together
 
 #### click below to navigate deployed application
 [live link](https://technology-blog-space.herokuapp.com/)
+
+### COntributers
+[aldaine knight](https//:www.github/luvkil)
+[sanusi cole]()
 
